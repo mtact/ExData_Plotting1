@@ -3,7 +3,7 @@ days <- HWData$Date == "1/2/2007" | HWData$Date == "2/2/2007"
 subData <- HWData[days,]
 
 DateTimeStr <- paste(subData$Date, subData$Time)
-DateTime <- strptime(daytimeStr, "%d/%m/%Y %H:%M:00")
+DateTime <- strptime(DateTimeStr, "%d/%m/%Y %H:%M:00")
 subData[["Date_and_Time"]] <- DateTime
 
 with(subData,plot(Date_and_Time, Sub_metering_1,type = "n", ylab = "Energy sub metering", xlab = "", cex.lab = 0.75, cex.axis = 0.75))
